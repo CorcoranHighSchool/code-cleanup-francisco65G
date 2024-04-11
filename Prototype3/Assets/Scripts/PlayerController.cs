@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class PlayerController : MonoBehaviour
     //Are we on the ground?
     private bool isOnGround = true;
     //Is the Game Over
-    public bool gameOver = false;
+    public bool gameOver { get; private set; }
 
     //Player Animator
     private Animator playerAnim;
