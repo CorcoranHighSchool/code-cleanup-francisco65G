@@ -1,15 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
-    public float speed = 5.0f;
+    [SerializeField] private float speed = 5.0f;
     public GameObject focalPoint;
     public bool hasPowerup;
     private float powerUpStrength = 15.0f;
     public GameObject powerupIndicator;
+    private const string Powerup = "Powerup";
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Powerup"))
+        if (other.CompareTag(Powerup))
         {
             powerupIndicator.SetActive(true);   //
             hasPowerup = true;
