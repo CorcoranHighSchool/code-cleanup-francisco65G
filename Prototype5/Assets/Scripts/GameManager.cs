@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Button restartButton;
     public List<GameObject> targets;
     private float spawnRate = 1.0f;
-    public bool isGameActive = false;
+    public bool isGameActive { get; private set; }
 
     public void StartGame(int difficulty)
     {
